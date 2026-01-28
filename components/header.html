@@ -1,49 +1,54 @@
-<header>
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="contact-info">
-                <span><i class="fas fa-phone-alt"></i> Гаряча лінія: 0-800-501-482</span>
-            </div>
-            <div class="lang-switcher">
-                <a href="#" style="color: white; text-decoration: none;">UA</a> | 
-                <a href="#" style="color: #ccc; text-decoration: none;">EN</a>
-            </div>
+<!-- Верхня смуга -->
+<div class="header-top">
+    <div class="container">
+        <div class="contact-info">
+            <span><i class="fas fa-phone-alt"></i> Гаряча лінія: 0-800-501-482</span>
+            <span><i class="fas fa-envelope"></i> info@sbu.gov.ua</span>
+        </div>
+        <div class="lang-switcher">
+            <a href="#" class="active">UA</a>
+            <a href="#">EN</a>
         </div>
     </div>
-    
-    <div class="container main-header">
-        <div class="logo-container">
-            <div class="logo-placeholder">
-                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="10" width="80" height="80" fill="#0057b7" />
-                    <circle cx="50" cy="50" r="30" fill="#ffd700" />
-                    <path d="M50,30 L60,50 L50,70 L40,50 Z" fill="#0057b7" />
-                </svg>
+</div>
+
+<!-- Основний хедер -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Логотип -->
+            <a href="../index.html" class="logo">
+                <div class="logo-img">
+                    <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="80" height="80" fill="#0057b7" />
+                        <circle cx="50" cy="50" r="30" fill="#ffd700" />
+                        <path d="M50,30 L60,50 L50,70 L40,50 Z" fill="#0057b7" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>СЛУЖБА БЕЗПЕКИ УКРАЇНИ</h1>
+                    <p>Офіційний веб-сайт</p>
+                </div>
+            </a>
+
+            <!-- Основна навігація -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Головна</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Про СБУ</a></li>
+                    <li class="nav-item"><a href="activity.html" class="nav-link">Діяльність</a></li>
+                    <li class="nav-item"><a href="press.html" class="nav-link">Пресцентр</a></li>
+                    <li class="nav-item"><a href="citizens.html" class="nav-link">Громадянам</a></li>
+                </ul>
+            </nav>
+
+            <!-- Пошук -->
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Пошук по сайту...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
-            <div class="logo-text">
-                <h1>Служба Безпеки України</h1>
-                <span>Офіційний веб-сайт</span>
-            </div>
-        </div>
-        
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <nav>
-            <ul id="mainMenu">
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="pages/about.html">Про СБУ</a></li>
-                <li><a href="pages/activity.html">Діяльність</a></li>
-                <li><a href="pages/press.html">Пресцентр</a></li>
-                <li><a href="pages/citizens.html">Громадянам</a></li>
-            </ul>
-        </nav>
-        
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Пошук по сайту...">
-            <button id="searchBtn"><i class="fas fa-search"></i></button>
-            <div id="searchResults" class="search-results"></div>
         </div>
     </div>
 </header>
