@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ОСНОВНІ СТИЛІ (такі самі як на інших сторінках) */
+        /* ОСНОВНІ СТИЛІ */
         :root {
             --sbu-blue: #0057b7;
             --sbu-blue-dark: #004494;
@@ -278,6 +278,7 @@
             border: 1px solid #eaeaea;
             transition: all 0.3s;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .subsection-menu a:hover,
@@ -395,38 +396,139 @@
             font-size: 14px;
         }
 
-        /* СПЕЦІАЛЬНА СЕКЦІЯ ДЛЯ АЛЬФИ */
-        .alpha-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        /* НОВІ СТИЛІ ДЛЯ ДОДАТКОВИХ ЕЛЕМЕНТІВ */
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--sbu-blue);
+        }
+
+        .contact-info h3 {
+            color: var(--sbu-blue);
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .contact-info strong {
+            color: #333;
+        }
+
+        .specialization {
+            margin: 30px 0;
+        }
+
+        .specialization-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .specialization-tag {
+            background: var(--sbu-blue);
             color: var(--sbu-white);
-            padding: 40px;
-            border-radius: 8px;
-            margin: 40px 0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s;
         }
 
-        .alpha-section h3 {
-            color: var(--sbu-yellow);
-            margin-bottom: 20px;
+        .specialization-tag:hover {
+            transform: translateY(-2px);
+            background: var(--sbu-blue-dark);
         }
 
-        .alpha-features {
+        .priority-areas {
+            margin: 30px 0;
+        }
+
+        .priority-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .alpha-feature {
+        .priority-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: var(--sbu-white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid #eaeaea;
+        }
+
+        .priority-item:hover {
+            transform: translateX(5px);
+        }
+
+        .priority-icon {
+            color: var(--sbu-blue);
+            font-size: 24px;
+            margin-top: 5px;
+        }
+
+        .priority-item h4 {
+            color: var(--sbu-blue);
+            margin-bottom: 5px;
+        }
+
+        .reporting {
+            background: linear-gradient(135deg, var(--sbu-blue) 0%, var(--sbu-blue-dark) 100%);
+            color: var(--sbu-white);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .reporting h3 {
+            color: var(--sbu-yellow);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .reporting-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .report-method {
             text-align: center;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+            border-radius: 10px;
+            transition: all 0.3s;
         }
 
-        .alpha-feature i {
-            font-size: 30px;
+        .report-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .report-method i {
+            font-size: 40px;
             color: var(--sbu-yellow);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .report-method h4 {
+            color: var(--sbu-yellow);
+            margin: 10px 0;
+        }
+
+        .report-method p {
+            opacity: 0.9;
+            font-size: 14px;
         }
 
         /* ФУТЕР */
@@ -532,6 +634,10 @@
             .page-title {
                 font-size: 32px;
             }
+
+            .subsection-menu {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -547,10 +653,13 @@
 
             .subsection-menu {
                 flex-direction: column;
+                align-items: center;
             }
 
             .subsection-menu a {
                 text-align: center;
+                width: 100%;
+                max-width: 300px;
             }
 
             .activity-grid {
@@ -561,12 +670,21 @@
                 grid-template-columns: 1fr;
             }
 
-            .alpha-features {
+            .specialization-grid {
+                justify-content: center;
+            }
+
+            .priority-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .reporting-methods {
                 grid-template-columns: 1fr;
             }
 
-            .alpha-section {
-                padding: 25px;
+            .contact-info, .specialization, .priority-areas {
+                padding: 20px;
             }
         }
     </style>
@@ -648,10 +766,10 @@
                 <!-- НАВІГАЦІЯ ПІДРОЗДІЛІВ -->
                 <div class="subsection-nav">
                     <ul class="subsection-menu" id="activitySubsections">
-                        <li><a href="#counterintelligence" class="active">Контррозвідка</a></li>
-                        <li><a href="#investigation">Головне слідче управління</a></li>
-                        <li><a href="#alpha">ЦСО "Альфа"</a></li>
-                        <li><a href="#crime">Боротьба зі злочинністю</a></li>
+                        <li><a href="#counterintelligence" class="active subsection-link">Контррозвідка</a></li>
+                        <li><a href="#investigation" class="subsection-link">Головне слідче управління</a></li>
+                        <li><a href="#cso-a" class="subsection-link">ЦСО "Альфа"</a></li>
+                        <li><a href="#crime-fighting" class="subsection-link">Боротьба зі злочинністю</a></li>
                     </ul>
                 </div>
 
@@ -716,253 +834,258 @@
                         </div>
                     </div>
 
-                   <!-- ПІДРОЗДІЛ: ГОЛОВНЕ СЛІДЧЕ УПРАВЛІННЯ -->
-<div id="investigation" class="subsection">
-    <h2>Головне слідче управління</h2>
-    
-    <p>Діяльність управління спрямована на розслідування тяжких та особливо тяжких злочинів, що становлять загрозу національній безпеці, суверенітету та територіальній цілісності України.</p>
-    
-    <div class="activity-grid">
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-gavel"></i>
-            </div>
-            <h4>Розслідування злочинів</h4>
-            <p>Розслідування кримінальних правопорушень проти основ національної безпеки</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-balance-scale"></i>
-            </div>
-            <h4>Боротьба з корупцією</h4>
-            <p>Викриття та розслідування корупційних діянь у державних органах</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-globe-europe"></i>
-            </div>
-            <h4>Міжнародна співпраця</h4>
-            <p>Спільні розслідування з правоохоронними органами інших держав</p>
-        </div>
-    </div>
-    
-    <h3>Основні завдання</h3>
-    <ul>
-        <li>Розслідування злочинів проти миру, безпеки людства та міжнародного правопорядку</li>
-        <li>Боротьба з терористичною діяльністю та фінансуванням тероризму</li>
-        <li>Розслідування корупційних правопорушень у державних органах</li>
-        <li>Боротьба з організованою злочинністю міжнародного характеру</li>
-        <li>Розслідування злочинів у сфері оборони та військової служби</li>
-        <li>Забезпечення повернення активів, виведених за кордон незаконним шляхом</li>
-        <li>Співпраця з міжнародними правоохоронними органами (Інтерпол, Європол)</li>
-    </ul>
-    
-    <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-number">1,850</div>
-            <div class="stat-text">кримінальних проваджень порушено у 2023 році</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">320</div>
-            <div class="stat-text">обвинувальних актів скеровано до суду</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">₴4.2 млрд</div>
-            <div class="stat-text">активів арештовано та заблоковано</div>
-        </div>
-    </div>
-    
-    <div class="contact-info">
-        <h3>Контакти для співпраці</h3>
-        <p><strong>Гаряча лінія для повідомлень про злочини:</strong> 0-800-501-482</p>
-        <p><strong>Електронна пошта:</strong> investigation@sbu.gov.ua</p>
-        <p><strong>Адреса:</strong> м. Київ, вул. Володимирська, 33</p>
-    </div>
-</div>
+                    <!-- ПІДРОЗДІЛ: ГОЛОВНЕ СЛІДЧЕ УПРАВЛІННЯ -->
+                    <div id="investigation" class="subsection">
+                        <h2>Головне слідче управління</h2>
+                        
+                        <p>Діяльність управління спрямована на розслідування тяжких та особливо тяжких злочинів, що становлять загрозу національній безпеці, суверенітету та територіальній цілісності України.</p>
+                        
+                        <div class="activity-grid">
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4>Розслідування злочинів</h4>
+                                <p>Розслідування кримінальних правопорушень проти основ національної безпеки</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h4>Боротьба з корупцією</h4>
+                                <p>Викриття та розслідування корупційних діянь у державних органах</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-globe-europe"></i>
+                                </div>
+                                <h4>Міжнародна співпраця</h4>
+                                <p>Спільні розслідування з правоохоронними органами інших держав</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Основні завдання</h3>
+                        <ul>
+                            <li>Розслідування злочинів проти миру, безпеки людства та міжнародного правопорядку</li>
+                            <li>Боротьба з терористичною діяльністю та фінансуванням тероризму</li>
+                            <li>Розслідування корупційних правопорушень у державних органах</li>
+                            <li>Боротьба з організованою злочинністю міжнародного характеру</li>
+                            <li>Розслідування злочинів у сфері оборони та військової служби</li>
+                            <li>Забезпечення повернення активів, виведених за кордон незаконним шляхом</li>
+                            <li>Співпраця з міжнародними правоохоронними органами (Інтерпол, Європол)</li>
+                        </ul>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">1,850</div>
+                                <div class="stat-text">кримінальних проваджень порушено у 2023 році</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">320</div>
+                                <div class="stat-text">обвинувальних актів скеровано до суду</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">₴4.2 млрд</div>
+                                <div class="stat-text">активів арештовано та заблоковано</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h3>Контакти для співпраці</h3>
+                            <p><strong>Гаряча лінія для повідомлень про злочини:</strong> 0-800-501-482</p>
+                            <p><strong>Електронна пошта:</strong> investigation@sbu.gov.ua</p>
+                            <p><strong>Адреса:</strong> м. Київ, вул. Володимирська, 33</p>
+                        </div>
+                    </div>
 
-<!-- ПІДРОЗДІЛ: ЦСО "А" -->
-<div id="cso-a" class="subsection">
-    <h2>Центр спеціальних операцій "А" (Альфа)</h2>
-    
-    <p>Елітний підрозділ спеціального призначення СБУ, який виконує завдання з боротьби з тероризмом, звільнення заручників, нейтралізації озброєних злочинців та виконання інших особливо складних оперативних завдань.</p>
-    
-    <div class="activity-grid">
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-skull-crossbones"></i>
-            </div>
-            <h4>Антитерористичні операції</h4>
-            <p>Проведення операцій з нейтралізації терористів та терористичних угруповань</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-user-injured"></i>
-            </div>
-            <h4>Звільнення заручників</h4>
-            <p>Спеціальні операції зі звільнення заручників у складних умовах</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h4>Захист об'єктів</h4>
-            <p>Захист особливо важливих державних об'єктів та дипломатичних місій</p>
-        </div>
-    </div>
-    
-    <h3>Основні завдання</h3>
-    <ul>
-        <li>Проведення антитерористичних операцій та заходів</li>
-        <li>Звільнення заручників у складних та нестандартних ситуаціях</li>
-        <li>Нейтралізація озброєних злочинців та терористів</li>
-        <li>Захист особливо важливих державних об'єктів</li>
-        <li>Забезпечення безпеки державних діячів та дипломатичних місій</li>
-        <li>Проведення спеціальних операцій на території, контрольованій противником</li>
-        <li>Участь в операціях зі знешкодження вибухових пристроїв</li>
-        <li>Підготовка спеціальних підрозділів правоохоронних органів</li>
-    </ul>
-    
-    <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-number">48</div>
-            <div class="stat-text">антитерористичних операцій проведено у 2023 році</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">127</div>
-            <div class="stat-text">заручників звільнено без втрат серед цивільного населення</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-text">успішність операцій за останній рік</div>
-        </div>
-    </div>
-    
-    <div class="specialization">
-        <h3>Спеціалізації бійців ЦСО "А"</h3>
-        <div class="specialization-grid">
-            <span class="specialization-tag">Снайпери</span>
-            <span class="specialization-tag">Сапери</span>
-            <span class="specialization-tag">Радісти</span>
-            <span class="specialization-tag">Медики</span>
-            <span class="specialization-tag">Кінестети</span>
-            <span class="specialization-tag">Водолази</span>
-            <span class="specialization-tag">Альпіністи</span>
-            <span class="specialization-tag">Парашутисти</span>
-        </div>
-    </div>
-</div>
+                    <!-- ПІДРОЗДІЛ: ЦСО "А" -->
+                    <div id="cso-a" class="subsection">
+                        <h2>Центр спеціальних операцій "А" (Альфа)</h2>
+                        
+                        <p>Елітний підрозділ спеціального призначення СБУ, який виконує завдання з боротьби з тероризмом, звільнення заручників, нейтралізації озброєних злочинців та виконання інших особливо складних оперативних завдань.</p>
+                        
+                        <div class="activity-grid">
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-skull-crossbones"></i>
+                                </div>
+                                <h4>Антитерористичні операції</h4>
+                                <p>Проведення операцій з нейтралізації терористів та терористичних угруповань</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-injured"></i>
+                                </div>
+                                <h4>Звільнення заручників</h4>
+                                <p>Спеціальні операції зі звільнення заручників у складних умовах</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4>Захист об'єктів</h4>
+                                <p>Захист особливо важливих державних об'єктів та дипломатичних місій</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Основні завдання</h3>
+                        <ul>
+                            <li>Проведення антитерористичних операцій та заходів</li>
+                            <li>Звільнення заручників у складних та нестандартних ситуаціях</li>
+                            <li>Нейтралізація озброєних злочинців та терористів</li>
+                            <li>Захист особливо важливих державних об'єктів</li>
+                            <li>Забезпечення безпеки державних діячів та дипломатичних місій</li>
+                            <li>Проведення спеціальних операцій на території, контрольованій противником</li>
+                            <li>Участь в операціях зі знешкодження вибухових пристроїв</li>
+                            <li>Підготовка спеціальних підрозділів правоохоронних органів</li>
+                        </ul>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">48</div>
+                                <div class="stat-text">антитерористичних операцій проведено у 2023 році</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">127</div>
+                                <div class="stat-text">заручників звільнено без втрат серед цивільного населення</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-text">успішність операцій за останній рік</div>
+                            </div>
+                        </div>
+                        
+                        <div class="specialization">
+                            <h3>Спеціалізації бійців ЦСО "А"</h3>
+                            <div class="specialization-grid">
+                                <span class="specialization-tag">Снайпери</span>
+                                <span class="specialization-tag">Сапери</span>
+                                <span class="specialization-tag">Радісти</span>
+                                <span class="specialization-tag">Медики</span>
+                                <span class="specialization-tag">Кінестети</span>
+                                <span class="specialization-tag">Водолази</span>
+                                <span class="specialization-tag">Альпіністи</span>
+                                <span class="specialization-tag">Парашутисти</span>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- ПІДРОЗДІЛ: БОРОТЬБА ЗІ ЗЛОЧИННІСТЮ -->
-<div id="crime-fighting" class="subsection">
-    <h2>Боротьба зі злочинністю</h2>
-    
-    <p>Системна діяльність з виявлення, запобігання та припинення злочинної діяльності, що становить загрозу суспільному порядку, економічній безпеці та правам громадян України.</p>
-    
-    <div class="activity-grid">
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-users-cog"></i>
-            </div>
-            <h4>Організована злочинність</h4>
-            <p>Боротьба з організованими злочинними угрупованнями та їх ліквідація</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <h4>Економічні злочини</h4>
-            <p>Викриття схем відмивання коштів, ухилення від сплати податків</p>
-        </div>
-        
-        <div class="activity-card">
-            <div class="activity-icon">
-                <i class="fas fa-tablets"></i>
-            </div>
-            <h4>Наркоторгівля</h4>
-            <p>Боротьба з незаконним обігом наркотичних засобів та психотропних речовин</p>
-        </div>
-    </div>
-    
-    <h3>Основні завдання</h3>
-    <ul>
-        <li>Боротьба з організованою злочинністю та корупцією</li>
-        <li>Протидія легалізації (відмиванню) коштів, одержаних злочинним шляхом</li>
-        <li>Виявлення та припинення діяльності злочинних угруповань</li>
-        <li>Боротьба з незаконним обігом наркотичних засобів та психотропних речовин</li>
-        <li>Протидія контрабанді та порушенням митних правил</li>
-        <li>Боротьба з кіберзлочинністю та злочинами в сфері високих технологій</li>
-        <li>Запобігання злочинам у сфері економіки та фінансів</li>
-        <li>Протидія незаконній міграції та торгівлі людьми</li>
-    </ul>
-    
-    <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-number">78</div>
-            <div class="stat-text">злочинних угруповань ліквідовано у 2023 році</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">₴9.3 млрд</div>
-            <div class="stat-text">коштів виведено з тіньового обігу</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">2.4 т</div>
-            <div class="stat-text">наркотичних засобів вилучено</div>
-        </div>
-    </div>
-    
-    <div class="priority-areas">
-        <h3>Пріоритетні напрями боротьби</h3>
-        <div class="priority-list">
-            <div class="priority-item">
-                <i class="fas fa-exclamation-triangle priority-icon"></i>
-                <div>
-                    <h4>Корупція у високих ешелонах влади</h4>
-                    <p>Викриття та розслідування корупційних схем серед державних службовців</p>
+                    <!-- ПІДРОЗДІЛ: БОРОТЬБА ЗІ ЗЛОЧИННІСТЮ -->
+                    <div id="crime-fighting" class="subsection">
+                        <h2>Боротьба зі злочинністю</h2>
+                        
+                        <p>Системна діяльність з виявлення, запобігання та припинення злочинної діяльності, що становить загрозу суспільному порядку, економічній безпеці та правам громадян України.</p>
+                        
+                        <div class="activity-grid">
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <h4>Організована злочинність</h4>
+                                <p>Боротьба з організованими злочинними угрупованнями та їх ліквідація</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h4>Економічні злочини</h4>
+                                <p>Викриття схем відмивання коштів, ухилення від сплати податків</p>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-tablets"></i>
+                                </div>
+                                <h4>Наркоторгівля</h4>
+                                <p>Боротьба з незаконним обігом наркотичних засобів та психотропних речовин</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Основні завдання</h3>
+                        <ul>
+                            <li>Боротьба з організованою злочинністю та корупцією</li>
+                            <li>Протидія легалізації (відмиванню) коштів, одержаних злочинним шляхом</li>
+                            <li>Виявлення та припинення діяльності злочинних угруповань</li>
+                            <li>Боротьба з незаконним обігом наркотичних засобів та психотропних речовин</li>
+                            <li>Протидія контрабанді та порушенням митних правил</li>
+                            <li>Боротьба з кіберзлочинністю та злочинами в сфері високих технологій</li>
+                            <li>Запобігання злочинам у сфері економіки та фінансів</li>
+                            <li>Протидія незаконній міграції та торгівлі людьми</li>
+                        </ul>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">78</div>
+                                <div class="stat-text">злочинних угруповань ліквідовано у 2023 році</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">₴9.3 млрд</div>
+                                <div class="stat-text">коштів виведено з тіньового обігу</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2.4 т</div>
+                                <div class="stat-text">наркотичних засобів вилучено</div>
+                            </div>
+                        </div>
+                        
+                        <div class="priority-areas">
+                            <h3>Пріоритетні напрями боротьби</h3>
+                            <div class="priority-list">
+                                <div class="priority-item">
+                                    <i class="fas fa-exclamation-triangle priority-icon"></i>
+                                    <div>
+                                        <h4>Корупція у високих ешелонах влади</h4>
+                                        <p>Викриття та розслідування корупційних схем серед державних службовців</p>
+                                    </div>
+                                </div>
+                                <div class="priority-item">
+                                    <i class="fas fa-server priority-icon"></i>
+                                    <div>
+                                        <h4>Кіберзлочинність</h4>
+                                        <p>Боротьба з кібератаками, шахрайством в інтернеті та витоком конфіденційних даних</p>
+                                    </div>
+                                </div>
+                                <div class="priority-item">
+                                    <i class="fas fa-truck-loading priority-icon"></i>
+                                    <div>
+                                        <h4>Транскордонна злочинність</h4>
+                                        <p>Протидія контрабанді, незаконній міграції та транскордонним злочинним мережам</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reporting">
+                            <h3>Як повідомити про злочин?</h3>
+                            <div class="reporting-methods">
+                                <div class="report-method">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <h4>Гаряча лінія</h4>
+                                    <p>0-800-501-482 (цілодобово, безкоштовно)</p>
+                                </div>
+                                <div class="report-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <h4>Електронна скринька</h4>
+                                    <p>crime.report@sbu.gov.ua</p>
+                                </div>
+                                <div class="report-method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>Мобільний додаток</h4>
+                                    <p>"СБУ - Допоможи правоохоронцям"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="priority-item">
-                <i class="fas fa-server priority-icon"></i>
-                <div>
-                    <h4>Кіберзлочинність</h4>
-                    <p>Боротьба з кібератаками, шахрайством в інтернеті та витоком конфіденційних даних</p>
-                </div>
-            </div>
-            <div class="priority-item">
-                <i class="fas fa-truck-loading priority-icon"></i>
-                <div>
-                    <h4Транскордонна злочинність</h4>
-                    <p>Протидія контрабанді, незаконній міграції та транскордонним злочинним мережам</p>
-                </div>
-            </div>
         </div>
-    </div>
-    
-    <div class="reporting">
-        <h3>Як повідомити про злочин?</h3>
-        <div class="reporting-methods">
-            <div class="report-method">
-                <i class="fas fa-phone-alt"></i>
-                <h4>Гаряча лінія</h4>
-                <p>0-800-501-482 (цілодобово, безкоштовно)</p>
-            </div>
-            <div class="report-method">
-                <i class="fas fa-envelope"></i>
-                <h4>Електронна скринька</h4>
-                <p>crime.report@sbu.gov.ua</p>
-            </div>
-            <div class="report-method">
-                <i class="fas fa-mobile-alt"></i>
-                <h4>Мобільний додаток</h4>
-                <p>"СБУ - Допоможи правоохоронцям"</p>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
+
     <!-- ФУТЕР -->
     <footer class="main-footer">
         <div class="container">
@@ -1009,4 +1132,99 @@
                     <h3>Корисні посилання</h3>
                     <ul class="footer-links">
                         <li><a href="https://www.president.gov.ua">Президент України</a></li>
-                        <li
+                        <li><a href="https://www.rada.gov.ua">Верховна Рада України</a></li>
+                        <li><a href="https://www.kmu.gov.ua">Кабінет Міністрів України</a></li>
+                        <li><a href="https://www.gp.gov.ua">Генеральна прокуратура</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Служба безпеки України. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ПЕРЕМИКАННЯ ПІДРОЗДІЛІВ
+        document.addEventListener('DOMContentLoaded', function() {
+            // Знаходимо всі посилання в навігації підрозділів
+            const subsectionLinks = document.querySelectorAll('.subsection-link');
+            const subsections = document.querySelectorAll('.subsection');
+            
+            // Додаємо обробник кліку на кожне посилання
+            subsectionLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Отримуємо ID цільового розділу
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Приховуємо всі розділи
+                    subsections.forEach(subsection => {
+                        subsection.classList.remove('active');
+                    });
+                    
+                    // Видаляємо активний клас з усіх посилань
+                    subsectionLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Додаємо активний клас до поточного посилання
+                    this.classList.add('active');
+                    
+                    // Показуємо цільовий розділ
+                    const targetSubsection = document.getElementById(targetId);
+                    if (targetSubsection) {
+                        targetSubsection.classList.add('active');
+                        
+                        // Плавна прокрутка до початку розділу
+                        targetSubsection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // МОБІЛЬНЕ МЕНЮ
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainMenu = document.getElementById('mainMenu');
+            
+            if (mobileMenuBtn && mainMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainMenu.classList.toggle('show');
+                    this.innerHTML = mainMenu.classList.contains('show') ? 
+                        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Закриваємо меню при кліку на посилання
+                const menuLinks = mainMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mainMenu.classList.remove('show');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+            }
+            
+            // ПОШУК
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            if (searchInput && searchBtn) {
+                searchBtn.addEventListener('click', function() {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        alert('Пошук: ' + query + '\n(Функціонал пошуку в розробці)');
+                        searchInput.value = '';
+                    }
+                });
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchBtn.click();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
