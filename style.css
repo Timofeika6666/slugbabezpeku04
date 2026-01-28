@@ -1,22 +1,23 @@
+/* Основні стилі СБУ */
+:root {
+    --sbu-blue: #0057b7;
+    --sbu-yellow: #ffd700;
+    --sbu-dark: #1a1a1a;
+    --sbu-light: #f8f9fa;
+    --sbu-gray: #6c757d;
+    --sbu-red: #dc3545;
+    --sbu-green: #28a745;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-    --primary-color: #0057b7;
-    --secondary-color: #ffd700;
-    --dark-color: #1a1a1a;
-    --light-color: #f8f9fa;
-    --gray-color: #6c757d;
-    --danger-color: #dc3545;
-    --success-color: #28a745;
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
 }
@@ -25,376 +26,588 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-/* Header Styles */
-header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.top-bar {
-    background-color: var(--primary-color);
+/* Хедер */
+.header-top {
+    background-color: var(--sbu-blue);
     color: white;
-    padding: 8px 0;
+    padding: 10px 0;
     font-size: 14px;
 }
 
-.top-bar-content {
+.header-top .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.contact-info i {
+    margin-right: 5px;
+}
+
+.lang-switcher a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.lang-switcher a.active {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .main-header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 15px 0;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo-container {
+.logo {
     display: flex;
     align-items: center;
     gap: 15px;
+    text-decoration: none;
+    color: var(--sbu-dark);
 }
 
-.logo {
-    height: 70px;
+.logo-img {
+    height: 60px;
     width: auto;
 }
 
 .logo-text h1 {
     font-size: 24px;
-    color: var(--primary-color);
-    line-height: 1.2;
+    font-weight: 700;
+    color: var(--sbu-blue);
+    margin-bottom: 5px;
 }
 
-.logo-text span {
-    font-size: 14px;
-    color: var(--gray-color);
+.logo-text p {
+    font-size: 12px;
+    color: var(--sbu-gray);
 }
 
-/* Navigation */
-nav ul {
+/* Навігація */
+.main-nav {
+    flex-grow: 1;
+    margin-left: 40px;
+}
+
+.nav-list {
     display: flex;
     list-style: none;
+    justify-content: center;
+    gap: 1px;
 }
 
-nav ul li {
+.nav-item {
     position: relative;
 }
 
-nav ul li a {
+.nav-link {
     display: block;
     padding: 15px 20px;
+    color: var(--sbu-dark);
     text-decoration: none;
-    color: var(--dark-color);
     font-weight: 600;
+    font-size: 16px;
     transition: all 0.3s;
+    border-bottom: 3px solid transparent;
 }
 
-nav ul li a:hover {
-    color: var(--primary-color);
+.nav-link:hover,
+.nav-link.active {
+    color: var(--sbu-blue);
+    border-bottom: 3px solid var(--sbu-yellow);
     background-color: rgba(0, 87, 183, 0.05);
 }
 
-nav ul li.active a {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-}
-
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-/* Search Bar */
-.search-container {
+/* Пошук */
+.search-box {
     position: relative;
     width: 300px;
 }
 
-.search-container input {
+.search-input {
     width: 100%;
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #e0e0e0;
     border-radius: 4px;
     font-size: 14px;
+    transition: border-color 0.3s;
 }
 
-.search-container button {
+.search-input:focus {
+    outline: none;
+    border-color: var(--sbu-blue);
+}
+
+.search-btn {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--gray-color);
+    color: var(--sbu-gray);
     cursor: pointer;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 87, 183, 0.9), rgba(0, 87, 183, 0.8)), url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+/* Герой секція */
+.hero-section {
+    background: linear-gradient(rgba(0, 87, 183, 0.9), rgba(0, 87, 183, 0.8)), url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 36px;
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.hero p {
-    font-size: 18px;
+.hero-subtitle {
+    font-size: 20px;
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--secondary-color);
-    color: var(--dark-color);
+    padding: 14px 32px;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 600;
-    border: none;
-    cursor: pointer;
+    font-size: 16px;
     transition: all 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
 }
 
-.btn:hover {
+.btn-primary {
+    background-color: var(--sbu-yellow);
+    color: var(--sbu-dark);
+}
+
+.btn-primary:hover {
     background-color: #e6c200;
     transform: translateY(-2px);
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
+.btn-secondary {
+    background-color: transparent;
     color: white;
+    border-color: white;
 }
 
-.btn-primary:hover {
-    background-color: #004494;
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--sbu-blue);
+    transform: translateY(-2px);
 }
 
-.btn-read-more {
+/* Інформаційні картки */
+.main-info {
+    padding: 80px 0;
+    background-color: var(--sbu-light);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.info-icon {
+    font-size: 48px;
+    color: var(--sbu-blue);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: var(--sbu-blue);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.info-card p {
+    color: var(--sbu-gray);
+    line-height: 1.6;
+}
+
+/* Новини */
+.news-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: var(--sbu-blue);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--sbu-yellow);
+}
+
+.view-all {
+    color: var(--sbu-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    border: 1px solid #eaeaea;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.news-date {
+    background-color: var(--sbu-blue);
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
     display: inline-block;
-    margin-top: 10px;
-    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.news-card h3 a {
+    color: var(--sbu-dark);
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.news-card h3 a:hover {
+    color: var(--sbu-blue);
+}
+
+.news-card p {
+    padding: 0 20px;
+    color: var(--sbu-gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0 20px 20px;
+    color: var(--sbu-blue);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
 }
 
-.btn-read-more:hover {
+.read-more:hover {
     text-decoration: underline;
 }
 
-/* Main Content */
-main {
-    padding: 40px 0;
-    min-height: 60vh;
-}
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
-}
-
-/* Home Page Sections */
-.about-sbu {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
-}
-
-.news-section, .statistics-section {
-    margin-bottom: 40px;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.news-card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-}
-
-.news-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.news-card-content {
-    padding: 20px;
-}
-
-.news-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.news-card-date {
-    color: var(--gray-color);
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.statistics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.stat-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
+/* Статистика */
+.stats-section {
+    padding: 80px 0;
+    background-color: var(--sbu-blue);
+    color: white;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stats-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.stat-item {
+    padding: 30px 20px;
 }
 
 .stat-number {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--sbu-yellow);
     margin-bottom: 10px;
 }
 
 .stat-label {
-    color: var(--gray-color);
     font-size: 16px;
+    line-height: 1.4;
 }
 
-/* Subsection Navigation */
-.subsection-nav {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+/* Футер */
+.main-footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding-top: 60px;
 }
 
-.subsection-nav a {
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    color: var(--dark-color);
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: var(--sbu-yellow);
+    font-size: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
     text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
-.subsection-nav a:hover {
-    background-color: var(--primary-color);
+.footer-links a:hover {
     color: white;
 }
 
-.subsection-nav a.active {
-    background-color: var(--primary-color);
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact-list i {
+    color: var(--sbu-yellow);
+    margin-top: 3px;
+}
+
+.hotline {
+    color: var(--sbu-yellow);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Сторінкові стилі */
+.page-header {
+    background-color: var(--sbu-blue);
     color: white;
+    padding: 60px 0;
+    text-align: center;
 }
 
-/* Content Pages */
-.content-page {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.content-page h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.content-page h3 {
-    color: var(--dark-color);
-    margin: 25px 0 15px;
-    font-size: 20px;
-}
-
-.content-page p {
+.page-title {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.content-page ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
+.page-subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.content-page li {
-    margin-bottom: 8px;
+.page-content {
+    padding: 60px 0;
+    background-color: var(--sbu-light);
 }
 
-/* Leadership Grid */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.leader-card {
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 20px;
+.content-wrapper {
+    background: white;
+    padding: 50px;
     border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.leader-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 15px;
-    border: 5px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Підрозділи навігації */
+.subsection-nav {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--sbu-yellow);
 }
 
-/* Gallery */
+.subsection-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.subsection-menu li {
+    margin-bottom: 5px;
+}
+
+.subsection-menu a {
+    display: block;
+    padding: 12px 25px;
+    background-color: #f8f9fa;
+    color: var(--sbu-dark);
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.subsection-menu a:hover,
+.subsection-menu a.active {
+    background-color: var(--sbu-blue);
+    color: white;
+    border-color: var(--sbu-blue);
+}
+
+/* Вміст підрозділів */
+.subsection-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.subsection-content h2 {
+    color: var(--sbu-blue);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.subsection-content h3 {
+    color: var(--sbu-dark);
+    margin: 30px 0 15px;
+    font-size: 22px;
+}
+
+.subsection-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.subsection-content ul {
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.subsection-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Галерея */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 30px;
 }
 
 .gallery-item {
     border-radius: 8px;
     overflow: hidden;
     height: 200px;
+    position: relative;
 }
 
 .gallery-item img {
@@ -408,146 +621,77 @@ main {
     transform: scale(1.05);
 }
 
-/* Search Results */
-.search-results {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-top: 20px;
-    display: none;
+/* Таблиці */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
 }
 
-.search-result-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+.data-table th {
+    background-color: var(--sbu-blue);
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
 }
 
-.search-result-item:last-child {
-    border-bottom: none;
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
 }
 
-.search-result-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 5px;
+.data-table tr:hover {
+    background-color: #f8f9fa;
 }
 
-/* Breadcrumbs */
+/* Хлібні крихти */
 .breadcrumbs {
-    padding: 15px 0;
+    padding: 20px 0;
     font-size: 14px;
-    color: var(--gray-color);
+    color: var(--sbu-gray);
 }
 
 .breadcrumbs a {
-    color: var(--primary-color);
+    color: var(--sbu-blue);
     text-decoration: none;
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark-color);
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+}
+
+/* Кнопка "Повернутися нагору" */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--sbu-blue);
     color: white;
-    padding: 50px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.footer-column h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-    color: #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s;
 }
 
-.footer-column ul li a:hover {
-    color: white;
+.back-to-top.visible {
+    opacity: 1;
 }
 
-.copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-    color: #aaa;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    nav ul.show {
-        display: flex;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .search-container {
-        width: 200px;
-    }
-    
-    .hero h2 {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 50px 0;
-    }
-    
-    .hero h2 {
-        font-size: 26px;
-    }
-    
-    .logo-text h1 {
-        font-size: 20px;
-    }
-    
-    .logo {
-        height: 50px;
-    }
-    
-    .search-container {
-        width: 100%;
-        margin-top: 15px;
-        order: 3;
-    }
-    
-    .main-header {
-        flex-wrap: wrap;
-    }
-    
-    .content-page, .about-sbu {
-        padding: 25px;
-    }
+.back-to-top:hover {
+    background-color: #004494;
+    transform: translateY(-3px);
 }
