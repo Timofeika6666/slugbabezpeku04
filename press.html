@@ -5,253 +5,1270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пресцентр - Служба безпеки України</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ОСНОВНІ СТИЛІ */
+        :root {
+            --sbu-blue: #0057b7;
+            --sbu-blue-dark: #004494;
+            --sbu-yellow: #ffd700;
+            --sbu-yellow-dark: #e6c200;
+            --sbu-dark: #1a1a1a;
+            --sbu-gray: #6c757d;
+            --sbu-light: #f8f9fa;
+            --sbu-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'PT Sans', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--sbu-dark);
+            background-color: var(--sbu-white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ХЕДЕР */
+        .header-top {
+            background-color: var(--sbu-blue);
+            color: var(--sbu-white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header-contacts i {
+            margin-right: 5px;
+            color: var(--sbu-yellow);
+        }
+
+        .lang-switcher a {
+            color: var(--sbu-white);
+            text-decoration: none;
+            margin-left: 10px;
+            opacity: 0.8;
+        }
+
+        .lang-switcher a.active {
+            opacity: 1;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .main-header {
+            background-color: var(--sbu-white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--sbu-dark);
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--sbu-blue);
+            border-radius: 4px;
+            color: var(--sbu-yellow);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            color: var(--sbu-blue);
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--sbu-gray);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1px;
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--sbu-dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--sbu-blue);
+            background-color: rgba(0, 87, 183, 0.05);
+        }
+
+        .main-nav a.active {
+            color: var(--sbu-blue);
+            border-bottom: 3px solid var(--sbu-yellow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--sbu-blue);
+            cursor: pointer;
+        }
+
+        .search-box {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--sbu-blue);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--sbu-gray);
+            cursor: pointer;
+        }
+
+        /* ЗАГОЛОВОК СТОРІНКИ */
+        .page-header {
+            background: linear-gradient(135deg, rgba(0, 87, 183, 0.95) 0%, rgba(0, 68, 148, 0.9) 100%);
+            color: var(--sbu-white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* ХЛІБНІ КРИХТИ */
+        .breadcrumbs {
+            background-color: var(--sbu-light);
+            padding: 15px 0;
+            font-size: 14px;
+            color: var(--sbu-gray);
+        }
+
+        .breadcrumbs a {
+            color: var(--sbu-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            margin: 0 8px;
+            color: var(--sbu-gray);
+        }
+
+        /* ОСНОВНИЙ КОНТЕНТ */
+        .page-content {
+            padding: 60px 0;
+            background-color: var(--sbu-light);
+        }
+
+        /* НОВИНИ */
+        .news-section {
+            background: var(--sbu-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            background: var(--sbu-blue);
+            color: var(--sbu-white);
+            padding: 25px 30px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header h2 i {
+            color: var(--sbu-yellow);
+        }
+
+        .news-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--sbu-white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--sbu-yellow);
+            color: var(--sbu-blue);
+            border-color: var(--sbu-yellow);
+        }
+
+        .news-grid {
+            padding: 30px;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #eaeaea;
+            padding: 25px 0;
+            transition: transform 0.3s;
+        }
+
+        .news-item:hover {
+            transform: translateX(10px);
+        }
+
+        .news-date {
+            display: inline-block;
+            background: var(--sbu-blue);
+            color: var(--sbu-white);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .news-item h3 {
+            color: var(--sbu-blue);
+            margin-bottom: 15px;
+            font-size: 22px;
+            line-height: 1.4;
+        }
+
+        .news-item p {
+            color: var(--sbu-gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .news-tag {
+            background: var(--sbu-light);
+            color: var(--sbu-blue);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            border: 1px solid rgba(0, 87, 183, 0.2);
+        }
+
+        .read-more {
+            color: var(--sbu-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* ПРЕС-РЕЛІЗИ */
+        .press-releases {
+            background: var(--sbu-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .press-list {
+            padding: 30px;
+        }
+
+        .press-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .press-item:hover {
+            border-color: var(--sbu-blue);
+            box-shadow: 0 5px 15px rgba(0, 87, 183, 0.1);
+        }
+
+        .press-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--sbu-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sbu-blue);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .press-content h3 {
+            color: var(--sbu-blue);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .press-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--sbu-gray);
+        }
+
+        .press-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ЗАЯВИ ТА КОНФЕРЕНЦІЇ */
+        .statements-section {
+            background: var(--sbu-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .statements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .statement-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .statement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .statement-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--sbu-blue) 0%, var(--sbu-blue-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sbu-white);
+            font-size: 48px;
+        }
+
+        .statement-content {
+            padding: 20px;
+        }
+
+        .statement-content h3 {
+            color: var(--sbu-blue);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .statement-date {
+            color: var(--sbu-gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ФОТОТА ВІДЕО */
+        .media-section {
+            background: var(--sbu-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .media-tabs {
+            display: flex;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .media-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--sbu-gray);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .media-tab:hover,
+        .media-tab.active {
+            color: var(--sbu-blue);
+            border-bottom: 3px solid var(--sbu-blue);
+            background: rgba(0, 87, 183, 0.05);
+        }
+
+        .media-content {
+            padding: 30px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .media-item {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            transition: transform 0.3s;
+        }
+
+        .media-item:hover {
+            transform: scale(1.03);
+        }
+
+        .media-thumbnail {
+            height: 180px;
+            background: var(--sbu-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sbu-blue);
+            font-size: 40px;
+        }
+
+        .media-info {
+            padding: 15px;
+        }
+
+        .media-info h4 {
+            color: var(--sbu-dark);
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .media-info p {
+            color: var(--sbu-gray);
+            font-size: 12px;
+        }
+
+        /* КОНТАКТИ ДЛЯ ЗМІ */
+        .media-contacts {
+            background: linear-gradient(135deg, var(--sbu-blue) 0%, var(--sbu-blue-dark) 100%);
+            color: var(--sbu-white);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .media-contacts h2 {
+            color: var(--sbu-yellow);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-card i {
+            font-size: 40px;
+            color: var(--sbu-yellow);
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--sbu-yellow);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* ФУТЕР */
+        .main-footer {
+            background-color: #1a1a1a;
+            color: var(--sbu-white);
+            padding-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--sbu-yellow);
+            font-size: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--sbu-white);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-list i {
+            color: var(--sbu-yellow);
+            margin-top: 3px;
+        }
+
+        .hotline {
+            color: var(--sbu-yellow);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            background-color: #111;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* АДАПТИВНІСТЬ */
+        @media (max-width: 992px) {
+            .main-nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--sbu-white);
+                flex-direction: column;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .search-box {
+                width: 200px;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .statements-list {
+                grid-template-columns: 1fr;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main-content {
+                flex-wrap: wrap;
+            }
+
+            .search-box {
+                width: 100%;
+                margin-top: 15px;
+                order: 3;
+            }
+
+            .press-item {
+                flex-direction: column;
+            }
+
+            .media-tabs {
+                flex-direction: column;
+            }
+
+            .media-tab {
+                width: 100%;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="header"></div>
+    <!-- ВЕРХНЯ ПАНЕЛЬ -->
+    <div class="header-top">
+        <div class="container header-top-content">
+            <div class="header-contacts">
+                <span><i class="fas fa-phone-alt"></i> Гаряча лінія: 0-800-501-482</span>
+                <span><i class="fas fa-envelope"></i> press@sbu.gov.ua</span>
+            </div>
+            <div class="lang-switcher">
+                <a href="#" class="active">UA</a>
+                <a href="#">EN</a>
+            </div>
+        </div>
+    </div>
 
+    <!-- ОСНОВНИЙ ХЕДЕР -->
+    <header class="main-header">
+        <div class="container header-main-content">
+            <!-- ЛОГОТИП -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">СБУ</div>
+                <div class="logo-text">
+                    <h1>СЛУЖБА БЕЗПЕКИ УКРАЇНИ</h1>
+                    <p>Офіційний веб-сайт</p>
+                </div>
+            </a>
+
+            <!-- МОБІЛЬНЕ МЕНЮ -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- НАВІГАЦІЯ -->
+            <nav class="main-nav">
+                <ul id="mainMenu">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про СБУ</a></li>
+                    <li><a href="activity.html">Діяльність</a></li>
+                    <li><a href="press.html" class="active">Пресцентр</a></li>
+                    <li><a href="citizens.html">Громадянам</a></li>
+                </ul>
+            </nav>
+
+            <!-- ПОШУК -->
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Пошук новин...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ЗАГОЛОВОК СТОРІНКИ -->
     <section class="page-header">
         <div class="container">
             <h1 class="page-title">Пресцентр СБУ</h1>
-            <p class="page-subtitle">Офіційні повідомлення, новини, фото та відеоматеріали про діяльність Служби безпеки України</p>
+            <p class="page-subtitle">Офіційні заяви, новини, прес-релізи, фотоматеріали та інформація для засобів масової інформації</p>
         </div>
     </section>
 
-    <div class="container breadcrumbs">
-        <a href="index.html">Головна</a>
-        <span>/</span>
-        <span>Пресцентр</span>
+    <!-- ХЛІБНІ КРИХТИ -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Головна</a>
+            <span>/</span>
+            <span>Пресцентр</span>
+        </div>
     </div>
 
+    <!-- ОСНОВНИЙ КОНТЕНТ -->
     <section class="page-content">
         <div class="container">
-            <div class="subsection-nav">
-                <ul class="subsection-menu" id="pressSubsections">
-                    <li><a href="#news" class="active">Новини</a></li>
-                    <li><a href="#photo">Фотогалерея</a></li>
-                    <li><a href="#video">Відеогалерея</a></li>
-                    <li><a href="#statements">Офіційні заяви</a></li>
-                    <li><a href="#briefings">Брифінги</a></li>
-                </ul>
+            <!-- РОЗДІЛ: ОСТАННІ НОВИНИ -->
+            <div class="news-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-newspaper"></i> Останні новини</h2>
+                    <div class="news-filters">
+                        <button class="filter-btn active">Всі новини</button>
+                        <button class="filter-btn">Важливі</button>
+                        <button class="filter-btn">Контррозвідка</button>
+                        <button class="filter-btn">Боротьба з корупцією</button>
+                        <button class="filter-btn">Міжнародна співпраця</button>
+                    </div>
+                </div>
+                
+                <div class="news-grid">
+                    <!-- НОВИНА 1 -->
+                    <div class="news-item">
+                        <div class="news-date">15.02.2024</div>
+                        <h3>СБУ викрила шпигунську мережу, що працювала на російські спецслужби</h3>
+                        <p>Співробітники Служби безпеки України нейтралізували агентурну мережу ФСБ РФ, яка збирала розвідувальну інформацію про оборонні об'єкти та пересування ЗСУ.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">Контррозвідка</span>
+                            <span class="news-tag">Безпека</span>
+                        </div>
+                        <a href="#" class="read-more">Детальніше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- НОВИНА 2 -->
+                    <div class="news-item">
+                        <div class="news-date">14.02.2024</div>
+                        <h3>Затримано керівника одного з державних підприємств за розкрадання бюджетних коштів</h3>
+                        <p>Слідчі СБУ встановили, що посадовець організував схему відмивання коштів та незаконного заволодіння майном на суму понад 50 мільйонів гривень.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">Корупція</span>
+                            <span class="news-tag">Економічні злочини</span>
+                        </div>
+                        <a href="#" class="read-more">Детальніше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- НОВИНА 3 -->
+                    <div class="news-item">
+                        <div class="news-date">13.02.2024</div>
+                        <h3>Спільна операція СБУ та Інтерполу: затримано міжнародну злочинну групу</h3>
+                        <p>У результаті спільних дій українських спецслужб та правоохоронців з 5 країн затримано організовану злочинну групу, яка займалася транскордонною контрабандою.</p>
+                        <div class="news-tags">
+                            <span class="news-tag">Міжнародна співпраця</span>
+                            <span class="news-tag">Організована злочинність</span>
+                        </div>
+                        <a href="#" class="read-more">Детальніше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="subsection-content">
-                <div id="news" class="subsection active">
-                    <h2>Новини СБУ</h2>
-                    
-                    <div class="news-archive">
-                        <div class="news-item">
-                            <div class="news-date">22.06.2023</div>
-                            <h3><a href="#">СБУ викрила корупційну схему у сфері держзакупівель</a></h3>
-                            <p>Співробітники Служби безпеки України викрили корупційну схему за участю чиновників міністерства, яка завдала збитків державі на суму понад 100 мільйонів гривень. Затримано 8 осіб.</p>
-                            <div class="news-tags">
-                                <span class="tag">Корупція</span>
-                                <span class="tag">Держзакупівлі</span>
-                            </div>
-                        </div>
-                        
-                        <div class="news-item">
-                            <div class="news-date">20.06.2023</div>
-                            <h3><a href="#">Нейтралізовано шпигунську мережу іноземної розвідки</a></h3>
-                            <p>Контррозвідники СБУ викрили та нейтралізували мережу агентів іноземної спецслужби, які збирали інформацію про обороноздатність України. Затримано 5 осіб.</p>
-                            <div class="news-tags">
-                                <span class="tag">Контррозвідка</span>
-                                <span class="tag">Шпигунство</span>
-                            </div>
-                        </div>
-                        
-                        <div class="news-item">
-                            <div class="news-date">18.06.2023</div>
-                            <h3><a href="#">Запобіжено теракт у столичному торговому центрі</a></h3>
-                            <p>В результаті оперативної роботи співробітників СБУ запобіжено підготовку терористичного акту у великому торговому центрі Києва. Вилучено вибухівку та зброю.</p>
-                            <div class="news-tags">
-                                <span class="tag">Антитероризм</span>
-                                <span class="tag">Безпека</span>
-                            </div>
-                        </div>
-                        
-                        <div class="news-item">
-                            <div class="news-date">15.06.2023</div>
-                            <h3><a href="#">СБУ впровадила нову систему кіберзахисту критичної інфраструктури</a></h3>
-                            <p>Служба безпеки України презентувала нову систему моніторингу та захисту кіберпростору, що дозволить ефективніше захищати критичну інфраструктуру держави від кібератак.</p>
-                            <div class="news-tags">
-                                <span class="tag">Кібербезпека</span>
-                                <span class="tag">Технології</span>
-                            </div>
-                        </div>
-                        
-                        <div class="news-item">
-                            <div class="news-date">12.06.2023</div>
-                            <h3><a href="#">Спільні навчання з партнерами по НАТО</a></h3>
-                            <p>Підрозділи СБУ взяли участь у спільних навчаннях з протидії кіберзагрозам та тероризму із фахівцями країн НАТО. Навчання пройшли на полігоні у Львівській області.</p>
-                            <div class="news-tags">
-                                <span class="tag">Співпраця</span>
-                                <span class="tag">НАТО</span>
-                                <span class="tag">Навчання</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="pagination">
-                        <a href="#" class="page-link active">1</a>
-                        <a href="#" class="page-link">2</a>
-                        <a href="#" class="page-link">3</a>
-                        <a href="#" class="page-link">4</a>
-                        <a href="#" class="page-link">5</a>
-                        <a href="#" class="page-link">→</a>
-                    </div>
+            <!-- РОЗДІЛ: ПРЕС-РЕЛІЗИ -->
+            <div class="press-releases">
+                <div class="section-header">
+                    <h2><i class="fas fa-bullhorn"></i> Офіційні прес-релізи</h2>
                 </div>
-
-                <div id="photo" class="subsection" style="display: none;">
-                    <h2>Фотогалерея</h2>
-                    <p>Фотоархів заходів, подій та діяльності Служби безпеки України.</p>
+                
+                <div class="press-list">
+                    <!-- ПРЕС-РЕЛІЗ 1 -->
+                    <div class="press-item">
+                        <div class="press-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="press-content">
+                            <h3>Заява щодо нейтралізації терористичної загрози</h3>
+                            <div class="press-meta">
+                                <span><i class="far fa-calendar"></i> 12.02.2024</span>
+                                <span><i class="far fa-file-pdf"></i> PDF, 245 KB</span>
+                            </div>
+                            <p>Офіційна інформація про запобігання терористичному акту та затримання підозрюваних осіб.</p>
+                            <a href="#" class="read-more">Завантажити прес-реліз <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
                     
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+1" alt="Навчання підрозділу Альфа">
-                            <div class="gallery-caption">Навчання підрозділу спеціального призначення "Альфа"</div>
+                    <!-- ПРЕС-РЕЛІЗ 2 -->
+                    <div class="press-item">
+                        <div class="press-icon">
+                            <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+2" alt="Вручення нагород">
-                            <div class="gallery-caption">Вручення державних нагород співробітникам СБУ</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+3" alt="Кібернавчання">
-                            <div class="gallery-caption">Тренування з кібербезпеки для співробітників</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+4" alt="Міжнародна співпраця">
-                            <div class="gallery-caption">Зустріч з представниками Європолу</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+5" alt="Робота слідчих">
-                            <div class="gallery-caption">Робота слідчих на місці події</div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="https://via.placeholder.com/300x200/0057b7/ffffff?text=Фото+6" alt="Техніка СБУ">
-                            <div class="gallery-caption">Спеціальна техніка Служби безпеки України</div>
+                        <div class="press-content">
+                            <h3>Статистика діяльності СБУ за 2023 рік</h3>
+                            <div class="press-meta">
+                                <span><i class="far fa-calendar"></i> 10.02.2024</span>
+                                <span><i class="far fa-file-pdf"></i> PDF, 1.2 MB</span>
+                            </div>
+                            <p>Детальна статистична інформація про результати роботи Служби безпеки України у минулому році.</p>
+                            <a href="#" class="read-more">Завантажити прес-реліз <i class="fas fa-download"></i></a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div id="video" class="subsection" style="display: none;">
-                    <h2>Відеогалерея</h2>
-                    <p>Відеоматеріали про діяльність СБУ, інтерв'ю з керівництвом, репортажі з місць подій.</p>
+            <!-- РОЗДІЛ: ЗАЯВИ ТА КОНФЕРЕНЦІЇ -->
+            <div class="statements-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-microphone"></i> Заяви та прес-конференції</h2>
+                </div>
+                
+                <div class="statements-list">
+                    <!-- КАРТКА 1 -->
+                    <div class="statement-card">
+                        <div class="statement-image">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="statement-content">
+                            <h3>Прес-конференція керівника СБУ</h3>
+                            <div class="statement-date">
+                                <i class="far fa-calendar"></i> 15.02.2024, 14:00
+                            </div>
+                            <p>Керівник Служби безпеки України проведе прес-конференцію щодо актуальних питань національної безпеки.</p>
+                            <a href="#" class="read-more">Дивитися трансляцію <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
                     
-                    <div class="video-grid">
-                        <div class="video-item">
-                            <div class="video-thumbnail">
-                                <img src="https://via.placeholder.com/350x200/0057b7/ffffff?text=Відео+1" alt="Інтерв'ю голови СБУ">
-                                <div class="play-button">
-                                    <i class="fas fa-play"></i>
-                                </div>
+                    <!-- КАРТКА 2 -->
+                    <div class="statement-card">
+                        <div class="statement-image">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="statement-content">
+                            <h3>Заява для ЗМІ про боротьбу з кіберзлочинністю</h3>
+                            <div class="statement-date">
+                                <i class="far fa-calendar"></i> 14.02.2024
                             </div>
-                            <div class="video-info">
-                                <h3>Інтерв'ю голови СБУ Василя Малюка</h3>
-                                <div class="video-date">18.06.2023</div>
-                                <p>Ексклюзивне інтерв'ю з головою Служби безпеки України про поточні завдання та виклики у сфері національної безпеки.</p>
+                            <p>Офіційна заява представника СБУ щодо протидії кібератакам та захисту критичної інфраструктури.</p>
+                            <a href="#" class="read-more">Читати заяву <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- РОЗДІЛ: ФОТОТА ВІДЕО -->
+            <div class="media-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-photo-video"></i> Фото та відеоматеріали</h2>
+                </div>
+                
+                <div class="media-tabs">
+                    <button class="media-tab active" data-tab="photo">Фото</button>
+                    <button class="media-tab" data-tab="video">Відео</button>
+                </div>
+                
+                <div class="media-content">
+                    <div class="media-grid" id="photoTab">
+                        <!-- ФОТО 1 -->
+                        <div class="media-item">
+                            <div class="media-thumbnail">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="media-info">
+                                <h4>Навчання спецпідрозділу "Альфа"</h4>
+                                <p>15.02.2024</p>
                             </div>
                         </div>
                         
-                        <div class="video-item">
-                            <div class="video-thumbnail">
-                                <img src="https://via.placeholder.com/350x200/0057b7/ffffff?text=Відео+2" alt="Навчання Альфа">
-                                <div class="play-button">
-                                    <i class="fas fa-play"></i>
-                                </div>
+                        <!-- ФОТО 2 -->
+                        <div class="media-item">
+                            <div class="media-thumbnail">
+                                <i class="fas fa-camera"></i>
                             </div>
-                            <div class="video-info">
-                                <h3>Навчання підрозділу "Альфа"</h3>
-                                <div class="video-date">15.06.2023</div>
-                                <p>Репортаж з тренувань бійців спецпідрозділу "Альфа". Показуються вправи зі стрільби, штурму будівель та звільнення заручників.</p>
+                            <div class="media-info">
+                                <h4>Робота кіберпідрозділів СБУ</h4>
+                                <p>14.02.2024</p>
                             </div>
                         </div>
                         
-                        <div class="video-item">
-                            <div class="video-thumbnail">
-                                <img src="https://via.placeholder.com/350x200/0057b7/ffffff?text=Відео+3" alt="Кібербезпека">
-                                <div class="play-button">
-                                    <i class="fas fa-play"></i>
-                                </div>
+                        <!-- ФОТО 3 -->
+                        <div class="media-item">
+                            <div class="media-thumbnail">
+                                <i class="fas fa-camera"></i>
                             </div>
-                            <div class="video-info">
-                                <h3>Кібербезпека: загрози та захист</h3>
-                                <div class="video-date">10.06.2023</div>
-                                <p>Документальний фільм про роботу кіберпідрозділів СБУ, методи захисту від кібератак та сучасні технології кібербезпеки.</p>
+                            <div class="media-info">
+                                <h4>Спільні навчання з NATO</h4>
+                                <p>13.02.2024</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div id="statements" class="subsection" style="display: none;">
-                    <h2>Офіційні заяви</h2>
-                    <p>Офіційні повідомлення та заяви пресслужби Служби безпеки України.</p>
-                    
-                    <div class="statements-list">
-                        <div class="statement-item">
-                            <h3>Заява щодо ситуації з кібербезпекою</h3>
-                            <div class="statement-date">20.06.2023</div>
-                            <p>СБУ констатує значне посилення кібератак на критичну інфраструктуру України з боку ворожих сил. Запроваджуються додаткові заходи захисту.</p>
-                            <a href="#" class="read-more">Читати повний текст</a>
-                        </div>
-                        
-                        <div class="statement-item">
-                            <h3>Заява щодо співпраці з міжнародними партнерами</h3>
-                            <div class="statement-date">18.06.2023</div>
-                            <p>СБУ продовжує тісну співпрацю з правоохоронними органами країн НАТО та ЄС у боротьбі з транснаціональною злочинністю та тероризмом.</p>
-                            <a href="#" class="read-more">Читати повний текст</a>
-                        </div>
+            <!-- РОЗДІЛ: КОНТАКТИ ДЛЯ ЗМІ -->
+            <div class="media-contacts">
+                <h2><i class="fas fa-id-card"></i> Контакти для засобів масової інформації</h2>
+                
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Прес-секретар</h3>
+                        <p>Артем Дехтяренко</p>
+                        <p>+38 (044) 123-45-67</p>
+                        <p>press.secretary@sbu.gov.ua</p>
                     </div>
-                </div>
-
-                <div id="briefings" class="subsection" style="display: none;">
-                    <h2>Брифінги та прес-конференції</h2>
-                    <p>Архів брифінгів та прес-конференцій представників Служби безпеки України.</p>
                     
-                    <div class="briefings-list">
-                        <div class="briefing-item">
-                            <h3>Брифінг речника СБУ</h3>
-                            <div class="briefing-date">22.06.2023, 14:00</div>
-                            <p>Щотижневий брифінг офіційного представника Служби безпеки України. Були представлені останні результати діяльності СБУ.</p>
-                            <a href="#" class="btn btn-primary">Дивитися запис</a>
-                        </div>
-                        
-                        <div class="briefing-item">
-                            <h3>Прес-конференція з приводу завершення антикорупційної операції</h3>
-                            <div class="briefing-date">19.06.2023, 11:00</div>
-                            <p>Представники Головного слідчого управління СБУ представили результати масштабної антикорупційної операції.</p>
-                            <a href="#" class="btn btn-primary">Дивитися запис</a>
-                        </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>Запити ЗМІ</h3>
+                        <p>Для офіційних запитів</p>
+                        <p>+38 (044) 123-45-68</p>
+                        <p>media.request@sbu.gov.ua</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Акредитація</h3>
+                        <p>Для участі в заходах</p>
+                        <p>+38 (044) 123-45-69</p>
+                        <p>accreditation@sbu.gov.ua</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="footer"></div>
+    <!-- ФУТЕР -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Служба безпеки України</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="about.html">Про СБУ</a></li>
+                        <li><a href="activity.html">Діяльність</a></li>
+                        <li><a href="press.html">Пресцентр</a></li>
+                        <li><a href="citizens.html">Громадянам</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакти</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <p class="hotline">0-800-501-482</p>
+                                <p>Гаряча лінія (цілодобово)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p>press@sbu.gov.ua</p>
+                                <p>Для запитів ЗМІ</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p>01011, м. Київ</p>
+                                <p>вул. Володимирська, 33</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Корисні посилання</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.president.gov.ua">Президент України</a></li>
+                        <li><a href="https://www.rada.gov.ua">Верховна Рада України</a></li>
+                        <li><a href="https://www.kmu.gov.ua">Кабінет Міністрів України</a></li>
+                        <li><a href="https://www.gp.gov.ua">Генеральна прокуратура</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Служба безпеки України. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
 
-    <a href="#" class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <script src="js/main.js"></script>
-    <script src="js/navigation.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('includes/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
-                });
+            // МОБІЛЬНЕ МЕНЮ
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainMenu = document.getElementById('mainMenu');
             
-            fetch('includes/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
+            if (mobileMenuBtn && mainMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainMenu.classList.toggle('show');
+                    this.innerHTML = mainMenu.classList.contains('show') ? 
+                        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
                 });
+                
+                // Закриваємо меню при кліку на посилання
+                const menuLinks = mainMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mainMenu.classList.remove('show');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+            }
             
-            initSubsections('pressSubsections');
+            // ФІЛЬТРИ НОВИН
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const newsItems = document.querySelectorAll('.news-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Видаляємо активний клас з усіх кнопок
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Додаємо активний клас до поточної кнопки
+                    this.classList.add('active');
+                    
+                    const filter = this.textContent;
+                    
+                    // Фільтруємо новини
+                    newsItems.forEach(item => {
+                        if (filter === 'Всі новини') {
+                            item.style.display = 'block';
+                        } else {
+                            const tags = item.querySelectorAll('.news-tag');
+                            let hasTag = false;
+                            
+                            tags.forEach(tag => {
+                                if (tag.textContent === filter) {
+                                    hasTag = true;
+                                }
+                            });
+                            
+                            item.style.display = hasTag ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+            
+            // ПЕРЕМИКАННЯ МІЖ ФОТО ТА ВІДЕО
+            const mediaTabs = document.querySelectorAll('.media-tab');
+            const photoTab = document.getElementById('photoTab');
+            
+            mediaTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Видаляємо активний клас з усіх вкладок
+                    mediaTabs.forEach(t => t.classList.remove('active'));
+                    // Додаємо активний клас до поточної вкладки
+                    this.classList.add('active');
+                    
+                    const tabType = this.getAttribute('data-tab');
+                    
+                    // Змінюємо вміст
+                    if (tabType === 'photo') {
+                        photoTab.innerHTML = `
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Навчання спецпідрозділу "Альфа"</h4>
+                                    <p>15.02.2024</p>
+                                </div>
+                            </div>
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Робота кіберпідрозділів СБУ</h4>
+                                    <p>14.02.2024</p>
+                                </div>
+                            </div>
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Спільні навчання з NATO</h4>
+                                    <p>13.02.2024</p>
+                                </div>
+                            </div>
+                        `;
+                    } else if (tabType === 'video') {
+                        photoTab.innerHTML = `
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Інтерв'ю керівника СБУ</h4>
+                                    <p>15.02.2024</p>
+                                </div>
+                            </div>
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Прес-конференція про безпеку</h4>
+                                    <p>14.02.2024</p>
+                                </div>
+                            </div>
+                            <div class="media-item">
+                                <div class="media-thumbnail">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="media-info">
+                                    <h4>Звіт про діяльність за 2023 рік</h4>
+                                    <p>13.02.2024</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            });
+            
+            // ПОШУК НОВИН
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            if (searchInput && searchBtn) {
+                searchBtn.addEventListener('click', function() {
+                    const query = searchInput.value.trim().toLowerCase();
+                    if (query) {
+                        // Пошук по новинах
+                        newsItems.forEach(item => {
+                            const title = item.querySelector('h3').textContent.toLowerCase();
+                            const text = item.querySelector('p').textContent.toLowerCase();
+                            
+                            if (title.includes(query) || text.includes(query)) {
+                                item.style.display = 'block';
+                                // Підсвічуємо знайдене
+                                item.style.backgroundColor = 'rgba(0, 87, 183, 0.05)';
+                            } else {
+                                item.style.display = 'none';
+                                item.style.backgroundColor = '';
+                            }
+                        });
+                    } else {
+                        // Показуємо всі новини, якщо пошуковий запит порожній
+                        newsItems.forEach(item => {
+                            item.style.display = 'block';
+                            item.style.backgroundColor = '';
+                        });
+                    }
+                });
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchBtn.click();
+                    }
+                });
+            }
         });
     </script>
 </body>
