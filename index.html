@@ -3,117 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Служба Безпеки України - Офіційний сайт</title>
+    <title>Служба безпеки України - Офіційний веб-сайт</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- Header буде завантажений через JavaScript -->
+    <!-- Хедер -->
     <div id="header"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Служба Безпеки України</h2>
-            <p>Основна мета діяльності СБУ - забезпечення державного суверенітету, конституційного ладу, територіальної цілісності, економічної, науково-технічної та оборонної безпеки України.</p>
-            <a href="pages/about.html" class="btn btn-primary">Дізнатися більше</a>
-        </div>
-    </section>
+    <!-- Головний контент -->
+    <main>
+        <!-- Герой секція -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>СЛУЖБА БЕЗПЕКИ УКРАЇНИ</h1>
+                    <p class="hero-subtitle">Захищаємо суверенітет, конституційний лад, територіальну цілісність та національні інтереси України</p>
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-primary">Про СБУ</a>
+                        <a href="activity.html" class="btn btn-secondary">Наша діяльність</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Breadcrumbs -->
-    <div class="container breadcrumbs">
-        <a href="index.html">Головна</a>
-    </div>
+        <!-- Основна інформація -->
+        <section class="main-info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Місія СБУ</h3>
+                        <p>Забезпечення державної безпеки України, захист конституційного ладу, суверенітету та територіальної цілісності держави.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Правові засади</h3>
+                        <p>Діяльність СБУ ґрунтується на Конституції України, законах України та міжнародних договорах.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Громадянам</h3>
+                        <p>СБУ захищає права та свободи громадян, бореться з корупцією та забезпечує національну безпеку.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="about-sbu">
-            <h2 class="section-title">Про Службу Безпеки України</h2>
-            <p>Служба безпеки України (СБУ) — спеціальний правоохоронний орган України, основним завданням якого є боротьба з тероризмом, шпигунством, захист державного суверенітету, конституційного ладу та територіальної цілісності України.</p>
-            <p>СБУ була утворена 20 вересня 1991 року на базі колишнього КДБ УРСР. З моменту створення Служба пройшла значний шлях реформування та адаптації до викликів сучасності.</p>
-            
-            <div style="margin: 30px 0; text-align: center;">
-                <a href="pages/about.html" class="btn">Про СБУ</a>
-                <a href="pages/activity.html" class="btn">Наша діяльність</a>
-            </div>
-        </div>
-        
-        <div class="news-section">
-            <h2 class="section-title">Останні новини</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Новина 1">
-                    <div class="news-card-content">
-                        <div class="news-card-date">15 червня 2023</div>
-                        <h3>Засідання Ради національної безпеки і оборони</h3>
-                        <p>Обговорення поточної безпекової ситуації в регіоні та заходів щодо посилення обороноздатності країни.</p>
-                        <a href="pages/press.html#news" class="btn-read-more">Читати далі</a>
-                    </div>
+        <!-- Останні новини -->
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Останні новини</h2>
+                    <a href="press.html" class="view-all">Всі новини →</a>
                 </div>
-                
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Новина 2">
-                    <div class="news-card-content">
-                        <div class="news-card-date">12 червня 2023</div>
-                        <h3>Спільні навчання з партнерами по НАТО</h3>
-                        <p>Підрозділи СБУ взяли участь у спільних навчаннях з протидії кіберзагрозам із фахівцями країн НАТО.</p>
-                        <a href="pages/press.html#news" class="btn-read-more">Читати далі</a>
-                    </div>
-                </div>
-                
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Новина 3">
-                    <div class="news-card-content">
-                        <div class="news-card-date">8 червня 2023</div>
-                        <h3>Нові технології для боротьби з кіберзлочинністю</h3>
-                        <p>СБУ представила нову систему моніторингу кіберпростору для захисту критичної інфраструктури держави.</p>
-                        <a href="pages/press.html#news" class="btn-read-more">Читати далі</a>
-                    </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-date">20.06.2023</div>
+                        <h3><a href="#">СБУ нейтралізувала шпигунську мережу</a></h3>
+                        <p>Співробітники Служби безпеки України викрили та нейтралізували мережу іноземних агентів...</p>
+                        <a href="#" class="read-more">Детальніше</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">18.06.2023</div>
+                        <h3><a href="#">Запобіжено теракт у столиці</a></h3>
+                        <p>В результаті оперативної роботи співробітників СБУ запобіжено підготовку терористичного акту...</p>
+                        <a href="#" class="read-more">Детальніше</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-date">15.06.2023</div>
+                        <h3><a href="#">Нові технології в боротьбі з кіберзлочинністю</a></h3>
+                        <p>СБУ впровадила нову систему моніторингу кіберпростору для захисту критичної інфраструктури...</p>
+                        <a href="#" class="read-more">Детальніше</a>
+                    </article>
                 </div>
             </div>
-        </div>
-        
-        <div class="statistics-section">
-            <h2 class="section-title">Статистика</h2>
-            <div class="statistics-grid">
-                <div class="stat-card">
-                    <div class="stat-number">1,250+</div>
-                    <div class="stat-label">справ порушено у 2023 році</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">справ доведено до суду</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">320</div>
-                    <div class="stat-label">запобіжених терористичних актів</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">цілодобова робота гарячої лінії</div>
+        </section>
+
+        <!-- Статистика -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>Статистика діяльності СБУ</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">1,847</div>
+                        <div class="stat-label">справ порушено у 2023 році</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">94%</div>
+                        <div class="stat-label">ефективність розкриття злочинів</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">терористичних актів запобіжено</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">цілодобова робота гарячої лінії</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer буде завантажений через JavaScript -->
+    <!-- Футер -->
     <div id="footer"></div>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
     <script>
         // Завантаження компонентів
         document.addEventListener('DOMContentLoaded', function() {
-            // Завантаження header
-            fetch('components/header.html')
+            fetch('includes/header.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header').innerHTML = data;
-                    // Ініціалізація меню після завантаження
-                    initMenu();
                 });
             
-            // Завантаження footer
-            fetch('components/footer.html')
+            fetch('includes/footer.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer').innerHTML = data;
