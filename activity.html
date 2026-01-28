@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Про СБУ - Служба безпеки України</title>
+    <title>Діяльність - Служба безпеки України</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ОСНОВНІ СТИЛІ */
+        /* ОСНОВНІ СТИЛІ (такі самі як на інших сторінках) */
         :root {
             --sbu-blue: #0057b7;
             --sbu-blue-dark: #004494;
@@ -42,7 +42,7 @@
             padding: 0 20px;
         }
 
-        /* ХЕДЕР (такий самий як на головній) */
+        /* ХЕДЕР */
         .header-top {
             background-color: var(--sbu-blue);
             color: var(--sbu-white);
@@ -337,142 +337,91 @@
             color: #444;
         }
 
-        /* КЕРІВНИЦТВО */
-        .leadership-grid {
+        /* СПЕЦІАЛЬНІ СТИЛІ ДЛЯ ДІЯЛЬНОСТІ */
+        .activity-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
         }
 
-        .leader-card {
-            display: flex;
+        .feature-card {
             background: var(--sbu-light);
+            padding: 30px;
             border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #eaeaea;
+            border-left: 4px solid var(--sbu-blue);
         }
 
-        .leader-photo {
-            width: 200px;
-            background: var(--sbu-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--sbu-white);
-            font-size: 60px;
-        }
-
-        .leader-info {
-            padding: 25px;
-            flex: 1;
-        }
-
-        .leader-info h3 {
+        .feature-icon {
+            font-size: 40px;
             color: var(--sbu-blue);
-            margin-bottom: 5px;
-            font-size: 22px;
-        }
-
-        .leader-position {
-            color: var(--sbu-dark);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .leader-rank {
-            color: var(--sbu-gray);
-            font-size: 14px;
             margin-bottom: 15px;
         }
 
-        .leader-bio p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
+        .feature-card h4 {
+            color: var(--sbu-blue);
+            margin-bottom: 10px;
+            font-size: 20px;
         }
 
-        /* КАР'ЄРА */
-        .requirements-grid {
+        .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
 
-        .requirement-card {
-            background: var(--sbu-light);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--sbu-blue);
-        }
-
-        .requirement-card h4 {
-            color: var(--sbu-blue);
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .benefit-card {
+        .result-card {
             text-align: center;
             padding: 25px;
             background: var(--sbu-light);
             border-radius: 8px;
         }
 
-        .benefit-icon {
-            font-size: 40px;
-            color: var(--sbu-blue);
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h4 {
+        .result-number {
+            font-size: 36px;
+            font-weight: bold;
             color: var(--sbu-blue);
             margin-bottom: 10px;
         }
 
-        .application-steps {
+        .result-text {
+            color: var(--sbu-dark);
+            font-size: 14px;
+        }
+
+        /* АЛЬФА СЕКЦІЯ */
+        .alpha-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--sbu-white);
+            padding: 40px;
+            border-radius: 8px;
             margin: 30px 0;
         }
 
-        .step {
-            display: flex;
+        .alpha-section h3 {
+            color: var(--sbu-yellow);
             margin-bottom: 20px;
-            align-items: flex-start;
         }
 
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--sbu-blue);
-            color: var(--sbu-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
+        .alpha-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .step-content h4 {
-            color: var(--sbu-blue);
-            margin-bottom: 5px;
+        .alpha-feature {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
         }
 
-        .application-info {
-            background: var(--sbu-light);
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 40px;
-            border-left: 4px solid var(--sbu-yellow);
+        .alpha-feature i {
+            font-size: 30px;
+            color: var(--sbu-yellow);
+            margin-bottom: 10px;
         }
 
         /* ФУТЕР */
@@ -599,22 +548,14 @@
                 text-align: center;
             }
 
-            .leader-card {
-                flex-direction: column;
-            }
-
-            .leader-photo {
-                width: 100%;
-                height: 200px;
-            }
-
-            .leadership-grid {
+            .activity-features,
+            .results-grid,
+            .alpha-features {
                 grid-template-columns: 1fr;
             }
 
-            .requirements-grid,
-            .benefits-grid {
-                grid-template-columns: 1fr;
+            .alpha-section {
+                padding: 25px;
             }
         }
     </style>
@@ -655,8 +596,8 @@
             <nav class="main-nav">
                 <ul id="mainMenu">
                     <li><a href="index.html">Головна</a></li>
-                    <li><a href="about.html" class="active">Про СБУ</a></li>
-                    <li><a href="activity.html">Діяльність</a></li>
+                    <li><a href="about.html">Про СБУ</a></li>
+                    <li><a href="activity.html" class="active">Діяльність</a></li>
                     <li><a href="press.html">Пресцентр</a></li>
                     <li><a href="citizens.html">Громадянам</a></li>
                 </ul>
@@ -675,8 +616,8 @@
     <!-- ЗАГОЛОВОК СТОРІНКИ -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">Про СБУ</h1>
-            <p class="page-subtitle">Служба безпеки України - спеціальний правоохоронний орган з особливим статусом, основним завданням якого є боротьба з тероризмом, шпигунством, захист державного суверенітету, конституційного ладу та територіальної цілісності України</p>
+            <h1 class="page-title">Діяльність СБУ</h1>
+            <p class="page-subtitle">Основні напрями роботи Служби безпеки України з забезпечення національної безпеки та захисту конституційного ладу держави</p>
         </div>
     </section>
 
@@ -685,7 +626,7 @@
         <div class="container">
             <a href="index.html">Головна</a>
             <span>/</span>
-            <span>Про СБУ</span>
+            <span>Діяльність</span>
         </div>
     </div>
 
@@ -695,297 +636,328 @@
             <div class="content-wrapper">
                 <!-- НАВІГАЦІЯ ПІДРОЗДІЛІВ -->
                 <div class="subsection-nav">
-                    <ul class="subsection-menu" id="aboutSubsections">
-                        <li><a href="#about" class="active">Про СБУ</a></li>
-                        <li><a href="#leadership">Керівництво</a></li>
-                        <li><a href="#vision">Візія, місія, цінності</a></li>
-                        <li><a href="#structure">Структура</a></li>
-                        <li><a href="#career">Кар'єра</a></li>
+                    <ul class="subsection-menu" id="activitySubsections">
+                        <li><a href="#counterintelligence" class="active">Контррозвідка</a></li>
+                        <li><a href="#investigation">Головне слідче управління</a></li>
+                        <li><a href="#alpha">ЦСО "Альфа"</a></li>
+                        <li><a href="#crime">Боротьба зі злочинністю</a></li>
+                        <li><a href="#cyber">Кібербезпека</a></li>
+                        <li><a href="#economic">Економічна безпека</a></li>
                     </ul>
                 </div>
 
                 <!-- КОНТЕНТ ПІДРОЗДІЛІВ -->
                 <div class="subsection-content">
-                    <!-- ПІДРОЗДІЛ: ПРО СБУ -->
-                    <div id="about" class="subsection active">
-                        <h2>Про Службу безпеки України</h2>
+                    <!-- ПІДРОЗДІЛ: КОНТРОЗВІДКА -->
+                    <div id="counterintelligence" class="subsection active">
+                        <h2>Контррозвідка</h2>
                         
-                        <p>Служба безпеки України (СБУ) - це центральний орган виконавчої влади України, який здійснює державне управління у сфері забезпечення державної безпеки України.</p>
+                        <p>Контррозвідувальна діяльність СБУ спрямована на виявлення, запобігання та припинення розвідувальної та іншої діяльності, спрямованої на шкоду національній безпеці України.</p>
                         
-                        <h3>Історія створення</h3>
-                        <p>СБУ була утворена 20 вересня 1991 року на базі колишнього КДБ УРСР. З моменту створення Служба пройшла значний шлях реформування та адаптації до викликів сучасності, ставши повноцінним європейським спецслужбовим органом.</p>
-                        
-                        <h3>Правова основа діяльності</h3>
-                        <p>Діяльність СБУ регулюється Конституцією України, Законом України "Про Службу безпеки України", іншими законами України та міжнародними договорами, згода на обов'язковість яких надана Верховною Радою України.</p>
+                        <div class="activity-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <h4>Виявлення шпигунів</h4>
+                                <p>Виявлення та нейтралізація агентурних мереж іноземних розвідок</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4>Захист таємниць</h4>
+                                <p>Захист державних таємниць та інформації з обмеженим доступом</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h4>Охорона об'єктів</h4>
+                                <p>Контррозвідувальне забезпечення оборонно-промислового комплексу</p>
+                            </div>
+                        </div>
                         
                         <h3>Основні завдання</h3>
                         <ul>
-                            <li>Захист державного суверенітету, конституційного ладу, територіальної цілісності України</li>
-                            <li>Забезпечення економічної безпеки держави</li>
-                            <li>Боротьба з тероризмом, шпигунством, диверсійною діяльністю</li>
-                            <li>Захист державних таємниць</li>
-                            <li>Запобігання та викриття корупційних правопорушень</li>
+                            <li>Виявлення та нейтралізація агентурних мереж іноземних розвідок</li>
+                            <li>Запобігання шпигунській діяльності на користь іноземних держав</li>
+                            <li>Боротьба з диверсійно-терористичною діяльністю</li>
+                            <li>Захист державних таємниць та інформації з обмеженим доступом</li>
+                            <li>Контррозвідувальне забезпечення оборонно-промислового комплексу</li>
+                            <li>Контррозвідувальний захист критичної інфраструктури держави</li>
+                            <li>Протидія технічним розвідкам</li>
+                        </ul>
+                        
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-number">24</div>
+                                <div class="result-text">шпигунські мережі викрито у 2023 році</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">156</div>
+                                <div class="result-text">агентів нейтралізовано</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">98%</div>
+                                <div class="result-text">ефективність захисту таємниць</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ПІДРОЗДІЛ: СЛІДЧЕ УПРАВЛІННЯ -->
+                    <div id="investigation" class="subsection">
+                        <h2>Головне слідче управління</h2>
+                        
+                        <p>Головне слідче управління СБУ здійснює досудове розслідування кримінальних правопорушень, віднесених до відання Служби згідно з чинним законодавством.</p>
+                        
+                        <div class="activity-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4>Розслідування злочинів</h4>
+                                <p>Розслідування злочинів проти основ національної безпеки</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h4>Боротьба з тероризмом</h4>
+                                <p>Розслідування терористичних актів та діяльності терористичних організацій</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h4>Антикорупційна діяльність</h4>
+                                <p>Розслідування корупційних злочинів у державних органах</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Компетенція</h3>
+                        <ul>
+                            <li>Розслідування злочинів проти основ національної безпеки</li>
+                            <li>Розслідування терористичних актів та діяльності терористичних організацій</li>
+                            <li>Розслідування шпигунства та державної зради</li>
+                            <li>Розслідування корупційних злочинів у державних органах</li>
+                            <li>Розслідування злочинів у сфері оборонно-промислового комплексу</li>
+                            <li>Розслідування злочинів, пов'язаних з незаконним обігом зброї, вибухових речовин</li>
+                            <li>Розслідування злочинів у сфері кібербезпеки</li>
+                        </ul>
+                        
+                        <h3>Методи роботи</h3>
+                        <p>Слідчі СБУ використовують сучасні методи криміналістики, експертизи, оперативно-розшукові заходи для збору доказів та розкриття складних злочинів. Особлива увага приділяється дотриманню прав людини та законності під час проведення слідчих дій.</p>
+                    </div>
+
+                    <!-- ПІДРОЗДІЛ: АЛЬФА -->
+                    <div id="alpha" class="subsection">
+                        <div class="alpha-section">
+                            <h2>Центр спеціальних операцій "Альфа"</h2>
+                            
+                            <p>Підрозділ спеціального призначення "Альфа" - елітний підрозділ СБУ, що спеціалізується на проведенні антитерористичних операцій, звільненні заручників та виконанні інших особливо складних завдань.</p>
+                            
+                            <h3>Основні завдання</h3>
+                            <div class="alpha-features">
+                                <div class="alpha-feature">
+                                    <i class="fas fa-crosshairs"></i>
+                                    <p>Антитерористичні операції</p>
+                                </div>
+                                <div class="alpha-feature">
+                                    <i class="fas fa-user-friends"></i>
+                                    <p>Звільнення заручників</p>
+                                </div>
+                                <div class="alpha-feature">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <p>Захист об'єктів</p>
+                                </div>
+                                <div class="alpha-feature">
+                                    <i class="fas fa-globe"></i>
+                                    <p>Міжнародні операції</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Історія створення</h3>
+                        <p>Підрозділ "Альфа" був створений у 1994 році на базі спецпідрозділу "Альфа" КДБ СРСР. За роки існування бійці "Альфи" взяли участь у сотнях операцій з нейтралізації терористів та звільнення заручників, зарекомендувавши себе як один з найкращих спецпідрозділів у світі.</p>
+                        
+                        <h3>Вимоги до бійців</h3>
+                        <p>Бійці "Альфи" проходять жорсткий відбір та спеціальну підготовку. Вимоги включають відмінну фізичну підготовку, стійку психіку, високі моральні якості та професійні навички. Тренування включають стрільбу, рукопашний бій, альпінізм, парашутну підготовку, водолазну справу та інші спеціальні дисципліни.</p>
+                        
+                        <h3>Озброєння та техніка</h3>
+                        <p>Підрозділ оснащений найсучаснішим озброєнням, спеціальною технікою та засобами зв'язку, що дозволяє ефективно виконувати поставлені завдання в будь-яких умовах.</p>
+                    </div>
+
+                    <!-- ПІДРОЗДІЛ: БОРОТЬБА ЗІ ЗЛОЧИННІСТЮ -->
+                    <div id="crime" class="subsection">
+                        <h2>Боротьба зі злочинністю</h2>
+                        
+                        <p>СБУ здійснює боротьбу з організованою злочинністю, корупцією, незаконним обігом зброї, наркотиків та контрабандою.</p>
+                        
+                        <div class="activity-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users-slash"></i>
+                                </div>
+                                <h4>Організована злочинність</h4>
+                                <p>Боротьба з організованими злочинними угрупованнями</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <h4>Корупція</h4>
+                                <p>Протидія корупції в органах влади та державних установах</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-syringe"></i>
+                                </div>
+                                <h4>Наркотики</h4>
+                                <p>Боротьба з незаконним обігом наркотичних речовин</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Основні напрями</h3>
+                        <ul>
                             <li>Боротьба з організованою злочинністю</li>
-                            <li>Захист прав та свобод громадян</li>
+                            <li>Протидія корупції в органах влади</li>
+                            <li>Боротьба з незаконним обігом зброї, вибухових речовин та наркотиків</li>
+                            <li>Протидія контрабанді та ухиленню від сплати митних платежів</li>
+                            <li>Боротьба з кіберзлочинністю</li>
+                            <li>Протидія легалізації (відмиванню) доходів, одержаних злочинним шляхом</li>
+                            <li>Боротьба з торгівлею людьми</li>
                         </ul>
+                        
+                        <h3>Співпраця з іншими органами</h3>
+                        <p>СБУ тісно співпрацює з Національною поліцією, Державним бюро розслідувань, Державною прикордонною службою, Державною фіскальною службою та іншими правоохоронними органами України в боротьбі зі злочинністю.</p>
+                        
+                        <h3>Міжнародна співпраця</h3>
+                        <p>СБУ активно співпрацює з правоохоронними органами інших держав, Інтерполом, Європолом, а також з відповідними структурами США, Великої Британії, Канади та інших країн у боротьбі з транснаціональною організованою злочинністю.</p>
                     </div>
 
-                    <!-- ПІДРОЗДІЛ: КЕРІВНИЦТВО -->
-                    <div id="leadership" class="subsection">
-                        <h2>Керівництво СБУ</h2>
+                    <!-- ПІДРОЗДІЛ: КІБЕРБЕЗПЕКА -->
+                    <div id="cyber" class="subsection">
+                        <h2>Кібербезпека</h2>
                         
-                        <p>Керівництво Служби безпеки України складається з висококваліфікованих фахівців з багаторічним досвідом роботи в сфері національної безпеки та оборони.</p>
+                        <p>Департамент кібербезпеки СБУ захищає інформаційний простір України, критичну інфраструктуру та державні інформаційні ресурси від кібератак та кіберзлочинів.</p>
                         
-                        <div class="leadership-grid">
-                            <div class="leader-card">
-                                <div class="leader-photo">
-                                    <i class="fas fa-user-tie"></i>
+                        <div class="activity-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
                                 </div>
-                                <div class="leader-info">
-                                    <h3>Василь Малюк</h3>
-                                    <p class="leader-position">Голова Служби безпеки України</p>
-                                    <p class="leader-rank">Генерал армії України</p>
-                                    <div class="leader-bio">
-                                        <p>Народився 3 січня 1983 року в селі Суходіл Стрийського району Львівської області. Закінчив Національну академію СБУ. На службі в СБУ з 2006 року.</p>
-                                    </div>
-                                </div>
+                                <h4>Захист інфраструктури</h4>
+                                <p>Захист державних інформаційних систем та критичної інфраструктури</p>
                             </div>
                             
-                            <div class="leader-card">
-                                <div class="leader-photo">
-                                    <i class="fas fa-user-tie"></i>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-laptop-code"></i>
                                 </div>
-                                <div class="leader-info">
-                                    <h3>Олександр Клименко</h3>
-                                    <p class="leader-position">Перший заступник Голови СБУ</p>
-                                    <p class="leader-rank">Генерал-лейтенант</p>
-                                    <div class="leader-bio">
-                                        <p>Народився 15 серпня 1976 року. Закінчив Київський національний університет імені Тараса Шевченка. На службі в СБУ з 2001 року.</p>
-                                    </div>
-                                </div>
+                                <h4>Боротьба з кіберзлочинністю</h4>
+                                <p>Боротьба з кіберзлочинністю та кібертероризмом</p>
                             </div>
                             
-                            <div class="leader-card">
-                                <div class="leader-photo">
-                                    <i class="fas fa-user-tie"></i>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-search"></i>
                                 </div>
-                                <div class="leader-info">
-                                    <h3>Оксана Коваль</h3>
-                                    <p class="leader-position">Заступник Голови СБУ</p>
-                                    <p class="leader-rank">Генерал-майор</p>
-                                    <div class="leader-bio">
-                                        <p>Народилася 22 травня 1978 року. Закінчила Львівський національний університет імені Івана Франка. На службі в СБУ з 2003 року.</p>
-                                    </div>
-                                </div>
+                                <h4>Моніторинг</h4>
+                                <p>Моніторинг кіберпростору України</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Завдання</h3>
+                        <ul>
+                            <li>Захист державних інформаційних систем та критичної інфраструктури</li>
+                            <li>Боротьба з кіберзлочинністю та кібертероризмом</li>
+                            <li>Протидія інформаційним операціям іноземних спецслужб</li>
+                            <li>Моніторинг кіберпростору України</li>
+                            <li>Розслідування кіберзлочинів</li>
+                            <li>Кіберрозвідка та контррозвідка</li>
+                        </ul>
+                        
+                        <h3>Останні результати</h3>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-number">850+</div>
+                                <div class="result-text">кібератак відбито</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">42</div>
+                                <div class="result-text">кіберзлочинців затримано</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">100%</div>
+                                <div class="result-text">критичних об'єктів захищено</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ПІДРОЗДІЛ: ВІЗІЯ, МІСІЯ, ЦІННОСТІ -->
-                    <div id="vision" class="subsection">
-                        <h2>Візія, місія, цінності та принципи</h2>
+                    <!-- ПІДРОЗДІЛ: ЕКОНОМІЧНА БЕЗПЕКА -->
+                    <div id="economic" class="subsection">
+                        <h2>Економічна безпека</h2>
                         
-                        <h3>Візія</h3>
-                        <p>Служба безпеки України як сучасний, ефективний, технологічно розвинений спеціальний правоохоронний орган, здатний адекватно реагувати на виклики та загрози національній безпеці, користується довірою суспільства та міжнародних партнерів.</p>
+                        <p>Департамент економічної безпеки захищає економічні інтереси України, бореться з економічними злочинами та забезпечує безпеку фінансової системи держави.</p>
                         
-                        <h3>Місія</h3>
-                        <p>Забезпечення національної безпеки та захисту прав і свобод громадян шляхом запобігання, виявлення, припинення та розкриття злочинів у сфері компетенції Служби, захисту державного суверенітету, конституційного ладу та територіальної цілісності України.</p>
-                        
-                        <h3>Цінності</h3>
-                        <ul>
-                            <li><strong>Патріотизм:</strong> безмежна любов до України, відданість національним інтересам</li>
-                            <li><strong>Професіоналізм:</strong> високий рівень кваліфікації, знань та навичок</li>
-                            <li><strong>Чеснота:</strong> непохитна прихильність моральним принципам</li>
-                            <li><strong>Відповідальність:</strong> усвідомлення важливості виконуваних завдань</li>
-                            <li><strong>Повага до людини:</strong> дотримання прав та свобод громадян</li>
-                            <li><strong>Лояльність:</strong> вірність присязі та службовому обов'язку</li>
-                        </ul>
-                        
-                        <h3>Принципи діяльності</h3>
-                        <ul>
-                            <li>Законність</li>
-                            <li>Дотримання прав та свобод людини і громадянина</li>
-                            <li>Поєднання гласних і негласних методів діяльності</li>
-                            <li>Апполітичність та позапартійність</li>
-                            <li>Контроль за діяльністю з боку державних органів та громадськості</li>
-                            <li>Міжнародне співробітництво у сфері безпеки</li>
-                        </ul>
-                    </div>
-
-                    <!-- ПІДРОЗДІЛ: СТРУКТУРА -->
-                    <div id="structure" class="subsection">
-                        <h2>Структура СБУ</h2>
-                        
-                        <p>Структура Служби безпеки України побудована за територіально-галузевим принципом та включає центральний апарат, територіальні органи та підпорядковані установи.</p>
-                        
-                        <h3>Центральний апарат</h3>
-                        <ul>
-                            <li>Керівництво СБУ</li>
-                            <li>Департамент контррозвідки</li>
-                            <li>Департамент захисту національної державності</li>
-                            <li>Департамент боротьби з корупцією та організованою злочинністю</li>
-                            <li>Департамент економічної безпеки</li>
-                            <li>Департамент кібербезпеки</li>
-                            <li>Департамент інформаційно-аналітичного забезпечення</li>
-                            <li>Департамент кадрового забезпечення</li>
-                            <li>Управління власної безпеки</li>
-                            <li>Центр спеціальних операцій "Альфа"</li>
-                            <li>Головне слідче управління</li>
-                        </ul>
-                        
-                        <h3>Територіальні органи</h3>
-                        <p>У кожній області України та місті Києві діють Управління СБУ, які здійснюють повноваження Служби на відповідній території. Територіальні органи включають 24 обласних управління та Управління СБУ у місті Києві та Автономній Республіці Крим.</p>
-                        
-                        <h3>Підпорядковані установи</h3>
-                        <ul>
-                            <li>Національна академія СБУ</li>
-                            <li>Інститут післядипломної освіти</li>
-                            <li>Госпіталь СБУ</li>
-                            <li>Санаторій "Лісова пісня"</li>
-                            <li>Центральний архів СБУ</li>
-                        </ul>
-                    </div>
-
-                    <!-- ПІДРОЗДІЛ: КАР'ЄРА -->
-                    <div id="career" class="subsection">
-                        <h2>Кар'єра в СБУ</h2>
-                        
-                        <p>Служба безпеки України пропонує можливості для професійного зростання та розвитку в сфері національної безпеки. Ми шукаємо талановитих, відповідальних та патріотично налаштованих громадян України.</p>
-                        
-                        <h3>Вимоги до кандидатів</h3>
-                        <div class="requirements-grid">
-                            <div class="requirement-card">
-                                <h4>Громадянство</h4>
-                                <p>Громадянство України</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Вік</h4>
-                                <p>Не молодший 18 років</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Освіта</h4>
-                                <p>Відповідна освіта (вища або середня спеціальна)</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Здоров'я</h4>
-                                <p>Відмінний стан здоров'я</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Судимість</h4>
-                                <p>Відсутність судимості</p>
-                            </div>
-                            <div class="requirement-card">
-                                <h4>Мова</h4>
-                                <p>Знання державної мови</p>
-                            </div>
-                        </div>
-                        
-                        <h3>Етапи відбору</h3>
-                        <div class="application-steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Подача документів</h4>
-                                    <p>Заява, автобіографія, копії документів про освіту</p>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Перевірка відповідності</h4>
-                                    <p>Перевірка відповідності формальним вимогам</p>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Тестування</h4>
-                                    <p>Психологічне, фізичне, спеціальне тестування</p>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Співбесіда</h4>
-                                    <p>Співбесіда з комісією</p>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">5</div>
-                                <div class="step-content">
-                                    <h4>Спеціальна перевірка</h4>
-                                    <p>Перевірка біографії та контактів</p>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">6</div>
-                                <div class="step-content">
-                                    <h4>Медичне обстеження</h4>
-                                    <p>Повне медичне обстеження</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3>Напрями служби</h3>
-                        <ul>
-                            <li>Контррозвідка</li>
-                            <li>Боротьба з тероризмом</li>
-                            <li>Захист національної державності</li>
-                            <li>Економічна безпека</li>
-                            <li>Кібербезпека</li>
-                            <li>Слідча діяльність</li>
-                            <li>Оперативно-технічні заходи</li>
-                            <li>Аналітична робота</li>
-                            <li>Кадрова робота</li>
-                        </ul>
-                        
-                        <h3>Переваги служби в СБУ</h3>
-                        <div class="benefits-grid">
-                            <div class="benefit-card">
-                                <div class="benefit-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <h4>Навчання та розвиток</h4>
-                                <p>Безкоштовна професійна підготовка, курси підвищення кваліфікації</p>
-                            </div>
-                            
-                            <div class="benefit-card">
-                                <div class="benefit-icon">
-                                    <i class="fas fa-home"></i>
-                                </div>
-                                <h4>Соціальні гарантії</h4>
-                                <p>Гуртожитки, відпустки, медичне страхування</p>
-                            </div>
-                            
-                            <div class="benefit-card">
-                                <div class="benefit-icon">
+                        <div class="activity-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
-                                <h4>Кар'єрне зростання</h4>
-                                <p>Чітка система кар'єрного росту, можливості просування</p>
+                                <h4>Економічні злочини</h4>
+                                <p>Боротьба з економічною злочинністю</p>
                             </div>
                             
-                            <div class="benefit-card">
-                                <div class="benefit-icon">
-                                    <i class="fas fa-handshake"></i>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-landmark"></i>
                                 </div>
-                                <h4>Міжнародна співпраця</h4>
-                                <p>Участь у міжнародних програмах та миротворчих місіях</p>
+                                <h4>Захист бюджету</h4>
+                                <p>Захист державного бюджету та держмайна</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h4>Фінансова безпека</h4>
+                                <p>Забезпечення безпеки фінансової системи</p>
                             </div>
                         </div>
                         
-                        <div class="application-info">
-                            <h3>Як подати заявку?</h3>
-                            <p>Для подання заявки на службу в СБУ необхідно звернутися до найближчого територіального управління СБУ або відправити документи електронною поштою на адресу: <strong>career@sbu.gov.ua</strong></p>
-                            <p><strong>Термін розгляду заявки:</strong> до 30 днів</p>
-                            <button onclick="location.href='#contact'" style="margin-top: 15px; padding: 12px 30px; background: var(--sbu-blue); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
-                                Подати заявку онлайн
-                            </button>
+                        <h3>Завдання</h3>
+                        <ul>
+                            <li>Боротьба з економічною злочинністю</li>
+                            <li>Захист державного бюджету та держмайна</li>
+                            <li>Протидія тіньовій економіці</li>
+                            <li>Забезпечення безпеки фінансової системи</li>
+                            <li>Контррозвідувальне забезпечення економіки</li>
+                        </ul>
+                        
+                        <h3>Останні успіхи</h3>
+                        <p>За останній рік співробітниками Департаменту економічної безпеки викрито понад 50 корупційних схем у державних закупівлях, запобіжено виведення за кордон понад 500 мільйонів гривень, викрито кілька великих схем ухилення від сплати податків.</p>
+                        
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-number">2.1 млрд</div>
+                                <div class="result-text">гривень повернуто до бюджету</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">78</div>
+                                <div class="result-text">корупційних схем викрито</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-number">156</div>
+                                <div class="result-text">злочинців затримано</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1131,6 +1103,11 @@
                 const targetLink = document.querySelector(`.subsection-menu a[href="#${hash}"]`);
                 if (targetLink) {
                     targetLink.click();
+                }
+            } else {
+                // Активуємо перший підрозділ за замовчуванням
+                if (subsectionLinks.length > 0) {
+                    subsectionLinks[0].click();
                 }
             }
         });
